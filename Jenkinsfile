@@ -12,5 +12,15 @@ pipeline{
                 bat 'mvn test'
             }
         }
+        /* stage('Sonar analysis'){
+            environment{
+                scannerHome = tool 'SONAR_SCANNER'
+            }
+            steps{
+                withSonarQubeEnv('SONAR_LOCAL'){
+                    bat "${scannerHome}/bin/sonar-scanner -e -D(parametros)"
+                }
+            }
+        } */
     }
 }
