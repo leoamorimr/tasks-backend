@@ -1,9 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage('Just test'){
+        stage('Build Backend'){
             steps{
-                bat 'echo Deu certo!'
+//             execução de comando maven para gerar o war do projeto skipando os testes unitários.
+                bat 'mvn clean package -DskipTests=true'
             }
         }
     }
